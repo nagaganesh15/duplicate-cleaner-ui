@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/duplicate-cleaner-ui/static/css/main.984514fc.css",
+    "main.js": "/duplicate-cleaner-ui/static/js/main.ed5e3a2b.js",
+    "static/js/453.670e15c7.chunk.js": "/duplicate-cleaner-ui/static/js/453.670e15c7.chunk.js",
+    "index.html": "/duplicate-cleaner-ui/index.html",
+    "main.984514fc.css.map": "/duplicate-cleaner-ui/static/css/main.984514fc.css.map",
+    "main.ed5e3a2b.js.map": "/duplicate-cleaner-ui/static/js/main.ed5e3a2b.js.map",
+    "453.670e15c7.chunk.js.map": "/duplicate-cleaner-ui/static/js/453.670e15c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.984514fc.css",
+    "static/js/main.ed5e3a2b.js"
+  ]
+}
