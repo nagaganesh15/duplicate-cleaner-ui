@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+/* === Root Variables === */
+:root {
+  --bg-color: #f4f7fa;
+  --container-bg: #ffffff;
+  --text-color: #2c3e50;
+  --primary-color: #0f62fe; /* IBM Blue */
+  --primary-hover: #0353e9;
+  --secondary-color: #e74c3c;
+  --secondary-hover: #c0392b;
+  --input-border: #ccc;
+  --input-focus: #0f62fe;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --card-bg: #f9f9f9;
+  --loading-color: #ff9f43;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* === Dark Mode Overrides === */
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --container-bg: #2c2c2c;
+  --text-color: #f1f1f1;
+  --primary-color: #4589ff;
+  --primary-hover: #1f70c1;
+  --secondary-color: #ff5c5c;
+  --secondary-hover: #ff1e1e;
+  --input-border: #555;
+  --input-focus: #4589ff;
+  --shadow-color: rgba(255, 255, 255, 0.08);
+  --card-bg: #3b3b3b;
+  --loading-color: #f1c40f;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* === Base Styling === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
+.app {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* === Container Card === */
+.container {
+  background: var(--container-bg);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px var(--shadow-color);
+  width: 100%;
+  max-width: 900px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === Headings === */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+/* === Input Section === */
+.input-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 600px;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 2px solid var(--input-border);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  background: transparent;
+  color: var(--text-color);
+}
+
+input[type="text"]:focus {
+  border-color: var(--input-focus);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(15, 98, 254, 0.2);
+}
+
+/* === Button Group === */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  border: none;
   color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 15px;
+  box-shadow: 0 4px 15px rgba(15, 98, 254, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* === Duplicates Section === */
+.duplicates-section {
+  margin-top: 30px;
+}
+
+.duplicate-group {
+  background-color: var(--card-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 15px var(--shadow-color);
+  transition: background 0.3s ease;
+}
+
+.duplicate-group h3 {
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+/* === File Entry Checkbox === */
+.file-entry {
+  margin: 8px 0;
+}
+
+.file-entry label {
+  font-size: 15px;
+  color: var(--text-color);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* === Delete Button === */
+.delete-button {
+  background-color: var(--secondary-color);
+  margin-top: 15px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.delete-button:hover {
+  background-color: var(--secondary-hover);
+  transform: scale(1.05);
+}
+
+/* === Loading Text === */
+.loading {
+  text-align: center;
+  color: var(--loading-color);
+  font-weight: bold;
+  font-size: 17px;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+/* === Animation === */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 1;
   }
+  100% {
+    opacity: 0.6;
+  }
+}
+.delete-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.global-delete-button {
+  padding: 12px 32px;
+  font-size: 16px;
 }
